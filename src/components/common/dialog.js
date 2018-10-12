@@ -6,7 +6,7 @@ import File from "../file/file"
 function Alert(props) {
     return (<div>this is mi live</div>)
 }
-
+// class component
 class Dialog extends Component{
 
     render(){
