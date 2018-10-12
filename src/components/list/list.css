@@ -1,0 +1,9 @@
+
+ul,li{
+    list-style: none;
+    font-size: 30px;
+    padding: 0;
+}
+li{
+    border-bottom: 1px solid greenyellow;
+}

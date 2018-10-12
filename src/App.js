@@ -1,8 +1,19 @@
+// @flow
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import {LoggingButton,ClickTest }from './components/This'
+import ListComponent from "./components/list/list"
+import Calculator from './components/calculator/calculator'
+import Welcome from './components/common/dialog'
+
+
+
 class App extends Component {
+    constructor(props){
+        super(props)
+    }
   render() {
     return (
       <div className="App">
@@ -20,6 +31,11 @@ class App extends Component {
             Learn React
           </a>
         </header>
+        <LoggingButton > </LoggingButton>
+       <ClickTest> </ClickTest>
+          <ListComponent> </ListComponent>
+          <Calculator />
+            <Welcome/>
       </div>
     );
   }
