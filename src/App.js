@@ -9,7 +9,7 @@ import Calculator from './components/calculator/calculator'
 import Welcome from './components/common/dialog'
 
 
-
+// app
 class App extends Component {
     constructor(props){
         super(props)
