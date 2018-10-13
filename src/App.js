@@ -7,12 +7,18 @@ import {LoggingButton,ClickTest }from './components/This'
 import ListComponent from "./components/list/list"
 import Calculator from './components/calculator/calculator'
 import Welcome from './components/common/dialog'
+import TestThis from "./components/testthis/testthis"
 
 
 // app
 class App extends Component {
     constructor(props){
         super(props)
+    }
+
+    handle(){
+        console.log(this)
+        console.log("app")
     }
   render() {
     return (
@@ -36,6 +42,7 @@ class App extends Component {
           <ListComponent> </ListComponent>
           <Calculator />
             <Welcome/>
+            <TestThis click={this.handle.bind(this)} name="testthis" game="false"/>
       </div>
     );
   }
