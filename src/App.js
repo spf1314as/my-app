@@ -8,7 +8,9 @@ import ListComponent from "./components/list/list"
 import Calculator from './components/calculator/calculator'
 import Welcome from './components/common/dialog'
 import TestThis from "./components/testthis/testthis"
-
+import Fetch from "./components/fetch/fetch"
+import TestState from "./components/state/state"
+import Redux from "./components/redux/redux"
 
 // app
 class App extends Component {
@@ -37,12 +39,15 @@ class App extends Component {
             Learn React
           </a>
         </header>
+          <Fetch />
         <LoggingButton > </LoggingButton>
        <ClickTest> </ClickTest>
           <ListComponent> </ListComponent>
           <Calculator />
             <Welcome/>
             <TestThis click={this.handle.bind(this)} name="testthis" game="false"/>
+            <TestState/>
+            <Redux/>
       </div>
     );
   }

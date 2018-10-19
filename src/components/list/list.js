@@ -20,7 +20,7 @@ class ListComponent extends Component{
     render(){
 
 
-        return <ul>{list.map((num) => (<li key={num.toString()}>{num*2}</li>))}</ul>
+        return (<ul>{list.map((num) => (<li key={num.toString()}>{num*2}</li>))}</ul>)
     }
 
 

@@ -1,0 +1,12 @@
+
+.fetch-container{
+    background: greenyellow;
+    font-size: 36px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+.fetch-container .item{
+    flex: 0 1 auto;
+}
