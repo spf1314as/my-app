@@ -15,10 +15,12 @@ class Input extends Component{
     constructor(props){
         super(props)
         this.textInput = React.createRef();
-
+        this.input = null;
     }
     focusInput = () => {
-        this.textInput.current.focus()
+        console.log(this.textInput)
+        console.log(this.textInput.current)
+        this.input.focus()
     }
     componentDidMount(){
        console.log(this.textInput.current)
@@ -32,7 +34,7 @@ class Input extends Component{
     render(){
         return (
             <div>
-                <input type="text" ref={this.textInput} placeholder="该输入框聚焦。。。"/>
+                <input type="text" ref={(el)=> this.input = el} placeholder="该输入框聚焦。。。"/>
                 <button onClick = {this.focusInput }>click me</button>
                 <Button ref= {this.textInput} />
             </div>

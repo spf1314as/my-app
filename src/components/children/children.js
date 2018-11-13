@@ -17,10 +17,11 @@ function List( ) {
     )
 
 }
-// 属性值得类型进行验证
+// 属性值的类型进行验证
 Repeat.propTypes = {
     nums: PropTypes.number,
-    children: PropTypes.element.isRequired,
+    // children: PropTypes.element.isRequired,
+    children: PropTypes.func.isRequired,
 }
 // 默认属性值
 Repeat.defaultProps = {

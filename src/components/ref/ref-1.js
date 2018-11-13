@@ -1,6 +1,6 @@
 import React ,{Component} from "react"
 class Input extends Component{
-    constructor(props){
+    constructor(props,context){
         super(props)
         this.input = null;
         this.handlSubmit = this.handlSubmit.bind(this);

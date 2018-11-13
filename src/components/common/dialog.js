@@ -3,7 +3,7 @@ import List from "../children/children.js"
 import Input from "../ref/ref.js"
 import InputSecond from "../ref/ref-1"
 import File from "../file/file"
-function Alert(props) {
+function Alert(props,context) { // arguments props context
     return (<div>this is mi live</div>)
 }
 // class component
@@ -28,7 +28,7 @@ class Dialog extends Component{
 
 class Welcome extends Component{
 
-    shouldComponentUpdate(nextProps,nextState){
+    shouldComponentUpdate(nextProps,nextState,nextContext){
         return true
 
     }
