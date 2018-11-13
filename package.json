@@ -12,8 +12,9 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "serve": "serve -s build --listen 8080",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "flow": "flow"
@@ -29,6 +30,11 @@
   ],
   "devDependencies": {
     "flow-bin": "^0.82.0",
-    "redux-devtools": "^3.4.1"
+    "node-sass": "^4.10.0",
+    "px2rem": "^0.5.0",
+    "px2rem-loader": "^0.1.9",
+    "react-app-rewired": "^1.6.2",
+    "redux-devtools": "^3.4.1",
+    "sass-loader": "^7.1.0"
   }
 }

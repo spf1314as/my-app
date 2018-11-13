@@ -1,7 +1,7 @@
 import React,{Component} from "react"
 
 
-import "./fetch.css"
+import "./fetch.scss"
 
 export default class Fetch extends Component{
     constructor( props ){
