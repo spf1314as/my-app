@@ -12,10 +12,10 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "node_module/.bin/react-scripts start",
-    "start:px2rem": "node_module/.bin/react-app-rewired start",
+    "start": "node_modules/.bin/react-scripts start",
+    "start:px2rem": "node_modules/.bin/react-app-rewired start",
     "build": "rm -rf ./build && node_modules/.bin/react-scripts build",
-    "build:px2rem": "node_module/.bin/react-app-rewired build",
+    "build:px2rem": "node_modules/.bin/react-app-rewired build",
     "serve": "serve -s build --listen 8080",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
