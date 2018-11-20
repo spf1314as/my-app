@@ -7,6 +7,7 @@
     "react-dom": "^16.5.2",
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
+    "react-router-dom": "^4.3.1",
     "react-scripts": "2.0.4",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0"
@@ -16,7 +17,7 @@
     "start:px2rem": "node_modules/.bin/react-app-rewired start",
     "build": "rm -rf ./build && node_modules/.bin/react-scripts build",
     "build:px2rem": "node_modules/.bin/react-app-rewired build",
-    "build:nginx": "node_modules/.bin/react-app-rewired  build",
+    "build:nginx": "node_modules/.bin/react-app-rewired build --config-overrides ./config-overrides-nginx.js",
     "serve": "serve -s build --listen 8888",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -37,6 +38,7 @@
     "px2rem": "^0.5.0",
     "px2rem-loader": "^0.1.9",
     "react-app-rewired": "^1.6.2",
+    "react-loadable": "^5.5.0",
     "redux-devtools": "^3.4.1",
     "sass-loader": "^7.1.0"
   }

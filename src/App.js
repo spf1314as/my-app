@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+
 import {LoggingButton,ClickTest }from './components/This'
 import ListComponent from "./components/list/list"
 import Calculator from './components/calculator/calculator'
@@ -11,6 +12,7 @@ import TestThis from "./components/testthis/testthis"
 import Fetch from "./components/fetch/fetch"
 import TestState from "./components/state/state"
 import Redux from "./components/redux/redux"
+import RouterList from './components/router/router'
 
 // app
 class App extends Component {
@@ -48,6 +50,7 @@ class App extends Component {
             <TestThis click={this.handle.bind(this)} name="testthis" game="false"/>
             <TestState/>
             <Redux/>
+           <RouterList/>
       </div>
     );
   }
