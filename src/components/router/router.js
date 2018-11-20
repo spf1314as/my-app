@@ -1,13 +1,13 @@
 import './router.scss';
 
 import React,{Component} from 'react';
-import {BrowserRouter as Router ,Route,Switch,Link,Redirect,withRouter} from 'react-router-dom';
+import {HashRouter as Router ,Route,Switch,Link,Redirect,withRouter} from 'react-router-dom';
 import Loadable from "react-loadable" // dynamic import split code
 import Children from '../children/children'
 import List from '../list/list'
 function About(props) {
-    let {match }= props;
-    console.log(props)
+    let {match}= props;
+    console.dir(props)
     console.dir(match)
     return (
         <div className="about">
@@ -19,12 +19,12 @@ function About(props) {
     )
 
 }
-function User({match}) {
-
+function User(props) {
+    let {location} = props;
     return (
         <div className="user">
             <div>
-                id: {match.query}
+                id:{location.search}
             </div>
             <div>
                 this is user-page
@@ -35,7 +35,6 @@ function User({match}) {
 }
 function Re(props){
     console.log(props)
-
     return (
         <div>
             this is reDirect
@@ -46,8 +45,14 @@ function Re(props){
 }
 
 const AsyncUser = Loadable({ // 按需加载
-    loader:() => import(User), //*
-    loading: About,  // *
+    loader:() => import("../common/dialog.js"), //*
+    loading: function () {
+        return (
+            <div>
+
+        </div>
+        )
+    },  // *
 })
 
 class RouterList extends Component{
@@ -59,23 +64,37 @@ class RouterList extends Component{
         return (
             <div className="router-wrapper">
                 <h1>this is router</h1>
-                <Router>
+                <Router basename="/">
                    <div>
                        <ul>
                            <li><Link to="/">to home</Link></li>
                            <li><Link to="/about">to about</Link></li>
-                           <li><Link to="/user?id=1">to user</Link></li>
+                           <li><Link to="/user/page?id=1">to user</Link></li>
                            <li><Link to="/go">to go</Link></li>
                        </ul>
                          <Switch>
                              <Route path="/" exact component={List}>
+
                              </Route>
-                             <Route path="/:about" component={About}></Route>
-                             <Route path="/user" exact component={AsyncUser}></Route>
-                             <Route path="/user/render" render={() => (<h3>this is render</h3>)}></Route>
-                             <Route render={() => (<h1>404</h1>)}></Route>
-                             <Redirect from="/go" to={{pathName:'/center',search:'?utm=you',state:{referrer:'currentLocation'}}}></Redirect>
-                             <Route path="/center" component={Re}></Route>
+
+                             <Route path="/user/render" render={() => (<h3>this is render</h3>)}>
+                             </Route>
+
+                             <Route path="/user/:about" exact component={AsyncUser}>
+
+                             </Route>
+
+                             <Redirect from="/go" to={{pathname:'/center',search:'?utm=you',state:{referrer:'currentLocation'}}}>
+
+                             </Redirect>
+                             <Route path="/center" component={Re}>
+
+                             </Route>
+                             <Route path="/:about" component={About}>
+
+                             </Route>
+                             <Route render={() => (<h1>404</h1>)}>
+                             </Route>
                          </Switch>
 
                    </div>
