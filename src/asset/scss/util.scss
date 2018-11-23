@@ -1,0 +1,10 @@
+
+//px2vw
+@function px2vw($px){
+  @if unit($px) == px {
+    @return #{$px/1080px*100+"vw"}
+  }
+  @if unitless($px){
+    @return #{$px/1080*100 + "vw"}
+  }
+}

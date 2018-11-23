@@ -1,8 +1,9 @@
 // @flow
 import React, { Component } from 'react';
+import {HashRouter as Router,Link,Switch,Route,withRouter } from 'react-router-dom'
+
 import logo from './logo.svg';
 import './App.css';
-
 
 import {LoggingButton,ClickTest }from './components/This'
 import ListComponent from "./components/list/list"
@@ -13,6 +14,24 @@ import Fetch from "./components/fetch/fetch"
 import TestState from "./components/state/state"
 import Redux from "./components/redux/redux"
 import RouterList from './components/router/router'
+function Root(props){
+
+    return (
+        <div>
+            <Fetch />
+            <LoggingButton > </LoggingButton>
+            <ClickTest> </ClickTest>
+            <ListComponent> </ListComponent>
+            <Calculator />
+            <Welcome/>
+            <TestThis  name="testthis" game="false"/>
+            <TestState/>
+            <RouterList/>
+        </div>
+    )
+}
+
+
 
 // app
 class App extends Component {
@@ -41,16 +60,15 @@ class App extends Component {
             Learn React
           </a>
         </header>
-          <Fetch />
-        <LoggingButton > </LoggingButton>
-       <ClickTest> </ClickTest>
-          <ListComponent> </ListComponent>
-          <Calculator />
-            <Welcome/>
-            <TestThis click={this.handle.bind(this)} name="testthis" game="false"/>
-            <TestState/>
-            <Redux/>
-           <RouterList/>
+         <Router basename="/">
+             <div>
+                 <Link to="/"/>
+                 <Switch>
+                     <Route path="/" exact component={Root} />
+                     <Route path="/redux" component={Redux}></Route>
+                 </Switch>
+             </div>
+         </Router>
       </div>
     );
   }

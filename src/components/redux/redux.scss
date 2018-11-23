@@ -1,0 +1,23 @@
+@import "../../asset/scss/util.scss";
+.redux-container{
+  background: palevioletred;
+  min-height: 50vh;
+}
+
+.input{
+  width: px2vw(240px);
+  height: px2vw(70);
+  border: 1px solid black;
+  font-size: 20px;
+  padding-left: 5px;
+  color: black;
+  vertical-align: middle;
+}
+.btn{
+  border: 1px solid black;
+  padding: 5px;
+  text-align: center;
+  background: white;
+  margin: 10px;
+  
+}
