@@ -15,7 +15,6 @@ function List( ) {
             {(index) => (<div key={index}>this is index {index} here!</div>)}
         </Repeat>
     )
-
 }
 // 属性值的类型进行验证
 Repeat.propTypes = {

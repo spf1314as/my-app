@@ -1,0 +1,30 @@
+@import "./util";
+*{
+  padding: 0;
+  margin: 0;
+}
+.link_a{
+  text-align: center;
+  padding: px2vw(10);
+  border: 1px solid antiquewhite;
+  border-radius: px2vw(5);
+  color: white;
+  font-size: px2vw(40);
+  text-decoration: none;
+}
+nav{
+  background: grey;
+  display: flex;
+  justify-content:space-around;
+  align-items: center;
+  height: px2vw(100);
+}
+.btn{
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center;
+  background: white;
+  margin: 10px;
+  outline:none;
+}

@@ -4,7 +4,7 @@ import {HashRouter as Router,Link,Switch,Route,withRouter } from 'react-router-d
 
 import logo from './logo.svg';
 import './App.css';
-
+import "./asset/scss/commom.scss"
 import {LoggingButton,ClickTest }from './components/This'
 import ListComponent from "./components/list/list"
 import Calculator from './components/calculator/calculator'
@@ -14,8 +14,9 @@ import Fetch from "./components/fetch/fetch"
 import TestState from "./components/state/state"
 import Redux from "./components/redux/redux"
 import RouterList from './components/router/router'
-function Root(props){
+import Demo from './components/demo/demo'
 
+function Root(props){
     return (
         <div>
             <Fetch />
@@ -46,26 +47,17 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
          <Router basename="/">
              <div>
-                 <Link to="/"/>
-                 <Switch>
+                <nav>
+                    <Link to="/" className="link_a">首页</Link>
+                    <Link to="/redux" className="link_a">redux</Link>
+                    <Link to="/demo" className="link_a">demo</Link>
+                </nav>
+                <Switch>
                      <Route path="/" exact component={Root} />
                      <Route path="/redux" component={Redux}></Route>
+                     <Route path="/demo" component={Demo}></Route>
                  </Switch>
              </div>
          </Router>

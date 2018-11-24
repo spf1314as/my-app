@@ -3,11 +3,23 @@ import List from "../children/children.js"
 import Input from "../ref/ref.js"
 import InputSecond from "../ref/ref-1"
 import File from "../file/file"
-function Alert(props,context) { // arguments props context
-    return (<div>this is mi live</div>)
+import "./dialog.scss"
+export function Alert(props,context) { // arguments props context
+    return (<div className="alert-wrapper">
+        <div className="content-wrapper">
+            <h1 className="title">{props.title}</h1>
+            <div className="content">
+                {props.children}
+            </div>
+            <span className="close-btn" onClick={props.click}>
+                &times;
+            </span>
+        </div>
+
+</div>)
 }
 // class component
-class Dialog extends Component{
+export class Dialog extends Component{
 
     render(){
         return (
@@ -34,7 +46,7 @@ class Welcome extends Component{
     }
     render(){
         return (
-            <Dialog alert = {<Alert />} announce="this is announce">
+            <Dialog announce="this is announce">
                 <div>
                     Thank you for visiting our website!
                 </div>
