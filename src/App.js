@@ -15,6 +15,7 @@ import TestState from "./components/state/state"
 import Redux from "./components/redux/redux"
 import RouterList from './components/router/router'
 import Demo from './components/demo/demo'
+import Console from './components/common/console'
 
 function Root(props){
     return (
@@ -61,6 +62,7 @@ class App extends Component {
                  </Switch>
              </div>
          </Router>
+          <Console></Console>
       </div>
     );
   }

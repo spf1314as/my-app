@@ -20,7 +20,6 @@ export function Alert(props,context) { // arguments props context
 }
 // class component
 export class Dialog extends Component{
-
     render(){
         return (
             <div className="dialog">
