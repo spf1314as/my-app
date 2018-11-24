@@ -62,7 +62,7 @@ class App extends Component {
                  </Switch>
              </div>
          </Router>
-          <Console></Console>
+          {/*<Console></Console>*/}
       </div>
     );
   }

@@ -15,7 +15,6 @@ export default class Demo extends Component{
     }
     // render 开始执行时就开始执行页面里面的事件,所以不能写成函数调用的形式
     showContent = (target,e) => {
-        console.log(e.target)
         this.setState({
             [target]:{
                 show: !this.state[target].show

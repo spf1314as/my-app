@@ -15,6 +15,7 @@
   },
   "scripts": {
     "start": "node_modules/.bin/react-scripts start",
+    "start:vconsole": "node_modules/.bin/react-app-rewired start --config-overrides ./config-overrides-vconsole.js",
     "start:px2rem": "node_modules/.bin/react-app-rewired start",
     "build": "rm -rf ./build && node_modules/.bin/react-scripts build",
     "build:px2rem": "node_modules/.bin/react-app-rewired build",
