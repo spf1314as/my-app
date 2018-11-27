@@ -34,4 +34,22 @@ nav{
   right: px2vw(20);
 
 }
+.btn-group{
+  text-align: center;
+}
+.btn-flex{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-flow: row nowrap;
+}
+.input{
+  width: px2vw(400px);
+  height: px2vw(50px);
+  border: 1px solid black;
+  padding-left: px2vw(5px);
+  font-size: px2vw(32px);
+
+  
+}
 

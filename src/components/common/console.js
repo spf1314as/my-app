@@ -5,13 +5,13 @@ export default function Console(props) {
         const Vconsole = require('vconsole');
         const vconsole = new Vconsole();
     // 新api
-    const perfObserver = new PerformanceObserver((performanceEntryList) => {
-        for (const performanceEntry of performanceEntryList.getEntries()) {
-            console.log(performanceEntry.name); // 'first-paint' or 'first-contentful-paint'
-            console.log(performanceEntry.startTime); // DOMHighResTimeStamp
-        }
-    });
-    perfObserver.observe({ entryTypes: ["paint"] });
+    // const perfObserver = new PerformanceObserver((performanceEntryList) => {
+    //     for (const performanceEntry of performanceEntryList.getEntries()) {
+    //         console.log(performanceEntry.name); // 'first-paint' or 'first-contentful-paint'
+    //         console.log(performanceEntry.startTime); // DOMHighResTimeStamp
+    //     }
+    // });
+    // perfObserver.observe({ entryTypes: ["paint"] });
     setTimeout(_ => {
         let {domLoading,navigationStart} = window.performance.timing;
         let t = performance.timing;

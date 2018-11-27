@@ -21,6 +21,11 @@ export default class Demo extends Component{
             }
         })
     }
+    componentDidMount(){
+        console.log("**************")
+        console.log(this.props)
+        console.log("**************")
+    }
 
     render(){
         return (

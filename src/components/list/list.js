@@ -16,6 +16,9 @@ class ListComponent extends Component{
     //
     //     return <ul>{listItems}</ul>
     // }
+    componentWillMount(){
+
+    }
 
     render(){
 

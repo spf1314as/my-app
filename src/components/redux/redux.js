@@ -39,6 +39,7 @@ class Counter extends Component{
         const {store} = this.context;  // provide 将store 挂在到 context上面
         console.log(this.context)
         console.log(store.getState())
+        console.log(this.props)
     }
     componentDidUpdate(){
         if(this.input.value){
