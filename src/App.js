@@ -1,6 +1,6 @@
 // @flow
 import React, { Component,lazy,Suspense} from 'react';
-import {BrowserRouter as Router,Link,Switch,Route,withRouter } from 'react-router-dom'
+import {HashRouter as Router,Link,Switch,Route,withRouter } from 'react-router-dom'
 import Loadable from "react-loadable" 
 import logo from './logo.svg';
 import './App.css';
@@ -17,11 +17,11 @@ import Console from './components/common/console'
 import Pure from './components/pure/pure'
 import Api from './components/api/api'
 
+console.log(process.env.NODE_ENV)
 
-// console.log(lazy)
 // const RouterList = lazy( _ => import('./components/router/router'))
 // const Demo = lazy(_ => import('./components/demo/demo'))
-// const Html = lazy(_ => import('./components/Html/html'))
+// const Html = lazy(_ => import('./components/html/html'))
 // const Event = lazy(_ => import('./components/event/event'))
 const RouterList = Loadable({
     loader: _ => import('./components/router/router'),
@@ -82,7 +82,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-         <Router basename="/">
+         <Router basename='/'>
              <div>
                 <nav>
                     <Link to="/" className="link_a">首页</Link>
@@ -93,16 +93,17 @@ class App extends Component {
                     <Link to="/html" className="link_a">html</Link>
                     <Link to="/event" className="link_a">event</Link>
                 </nav>
-            
-               <Switch>
-                     <Route path="/" exact component={Root} />
-                     <Route path="/redux" component={Redux}></Route>
-                     <Route path="/demo" component={Demo}></Route>
-                     <Route path="/pure" component={Pure}></Route>
-                     <Route path="/api" component={Api}></Route>
-                     <Route path="/html" component={Html}></Route>
-                     <Route path="/event" component={Event}></Route>
-                 </Switch>
+                {/* <Suspense fallback={() => (<div> loading.... </div>)}> */}
+                    <Switch>
+                        <Route path="/" exact component={Root} />
+                        <Route path="/redux" component={Redux}></Route>
+                        <Route path="/demo" component={Demo}></Route>
+                        <Route path="/pure" component={Pure}></Route>
+                        <Route path="/api" component={Api}></Route>
+                        <Route path="/html" component={Html}></Route>
+                        <Route path="/event" component={Event}></Route>
+                    </Switch>
+                {/* </Suspense> */}
              </div>
          </Router>
           {/*<Console></Console>*/}
