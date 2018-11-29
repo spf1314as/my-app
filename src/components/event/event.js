@@ -1,7 +1,8 @@
-import React,{Component} from 'react'
+import React,{Component,lazy} from 'react'
 import '../../asset/scss/commom.scss'
 import './event.scss'
-
+import Loading from "../common/loading"
+import Capture from "./capture"
 export default class Event extends Component{
     constructor(props){
         super(props)
@@ -24,16 +25,18 @@ export default class Event extends Component{
 
     render(){
         return (
-            <div className='event-wrapper' onScroll={this.showEvent} style={{height:'50vh',overflow:'scroll'}}>
+            <div className='event-wrapper' onScroll={this.showEvent}>
                 <h1>this is event wrapper</h1>
                 <button className='btn' onClick={e => console.log(e)}>click me</button>
-                <div className="scroll" style={{height:'50'}}>
+                <div className="scroll">
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Similique dolorem quas beatae, iure deleniti amet saepe et sint suscipit temporibus mollitia in minus dolor deserunt incidunt error accusamus non quam! 
                 </div>
                 <h3>transition event</h3>
                 <div onTransitionEnd={this.showEvent} ref={el => this.trans = el}>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus quod perferendis explicabo, quis praesentium consectetur, illum corrupti in ratione fugit sapiente quasi animi dignissimos voluptas. Sit tenetur accusantium provident id!
                 </div>
+                <Capture/>
+               <Loading color="red" radius="white"></Loading>
             </div>
 
         )

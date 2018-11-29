@@ -16,8 +16,8 @@ import Redux from "./components/redux/redux"
 import Console from './components/common/console'
 import Pure from './components/pure/pure'
 import Api from './components/api/api'
+import Loading from "./components/common/loading"
 
-console.log(process.env.NODE_ENV)
 
 // const RouterList = lazy( _ => import('./components/router/router'))
 // const Demo = lazy(_ => import('./components/demo/demo'))
@@ -25,27 +25,23 @@ console.log(process.env.NODE_ENV)
 // const Event = lazy(_ => import('./components/event/event'))
 const RouterList = Loadable({
     loader: _ => import('./components/router/router'),
-    loading: function(){
-        return (<div></div>)
-    }
+    loading: Loading
 });
 const Demo = Loadable({
     loader: _ => import('./components/demo/demo'),
-    loading: function(){
-        return (<div></div>)
-    }
+    loading: Loading
 })
 const Html = Loadable({
     loader: _ => import('./components/html/html'),
-    loading: function(){
-        return (<div></div>)
-    }
+    loading: Loading
 })
 const Event = Loadable({
     loader: _ => import('./components/event/event'),
-    loading: function(){
-        return (<div></div>)
-    }
+    loading: Loading
+})
+const Context = Loadable({
+    loader: _ => import('./components/context/context'),
+    loading: Loading
 })
 
 
@@ -92,6 +88,7 @@ class App extends Component {
                     <Link to="/api" className="link_a">api</Link>
                     <Link to="/html" className="link_a">html</Link>
                     <Link to="/event" className="link_a">event</Link>
+                    <Link to="/context" className="link_a">context</Link>
                 </nav>
                 {/* <Suspense fallback={() => (<div> loading.... </div>)}> */}
                     <Switch>
@@ -102,6 +99,7 @@ class App extends Component {
                         <Route path="/api" component={Api}></Route>
                         <Route path="/html" component={Html}></Route>
                         <Route path="/event" component={Event}></Route>
+                        <Route path="/context" component={Context}></Route>
                     </Switch>
                 {/* </Suspense> */}
              </div>
